@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/material_icon/MaterialIcons-Regular.ttf")
+    format("truetype");
+}
+
+.mdi {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.mdi.md-14 {
+  font-size: 14px;
+}
+.mdi.md-16 {
+  font-size: 16px;
+}
+.mdi.md-18 {
+  font-size: 18px;
+}
+.mdi.md-24 {
+  font-size: 24px;
+}
+.mdi.md-36 {
+  font-size: 36px;
+}
+.mdi.md-48 {
+  font-size: 48px;
+}
+.mdi.md-dark {
+  color: var(--color-black, rgba(0, 0, 0, 0.54));
+}
+.mdi.md-dark.md-inactive {
+  color: var(--light-dark, rgba(0, 0, 0, 0.26));
+}
+.mdi.md-light {
+  color: var(--color-white, rgba(255, 255, 255, 1));
+}
+.mdi.md-light.md-inactive {
+  color: var(--light-white, rgba(255, 255, 255, 0.3));
+}
