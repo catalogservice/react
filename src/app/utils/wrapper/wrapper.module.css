@@ -1,4 +1,3 @@
-@import url('../../../css/variables.css');
 .wrapper{
     padding: var(--space-md);
     border-radius: var(--space-xxs);
