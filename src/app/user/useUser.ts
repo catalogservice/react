@@ -2,7 +2,10 @@ import React from "react";
 import getUser from "./api/getUser";
 import { IUser } from './user';
 const useUser = () => {
-    let [user, setUser] = React.useState<IUser | null>(null)
+    let [user, setUser] = React.useState<IUser | null>({
+        username: "anthonyfinix",
+        password: "letmein"
+    })
     const fetchUser = () => { }
     React.useEffect(() => {
     }, [])
