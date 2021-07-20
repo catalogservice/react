@@ -7,6 +7,7 @@ export interface IDataTable {
 export type TOptions = {
     fields?: Array<any>,
     showMoreBtnCb?:showMoreBtnCb,
+    onScrollEndCb?:function(),
     rowOnClick?: function(SyntheticEvent,any),
     exclude?: Array<any>,
 }

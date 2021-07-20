@@ -3,33 +3,39 @@ import filterFields from './filterFields';
 import getFields from './getFields';
 import getRows from './getRows';
 import OptionButton from './optionButton';
-import React, { FC } from 'react';
+import React, { FC, SyntheticEvent } from 'react';
 import Th from './th';
 import Tr from './tr';
 import Td from './td';
 import sanitizeOptions from './sanitizeOptions';
-import { IDataTable,showMoreBtnCb } from './dataTable';
-const dataTable:FC<IDataTable> = ({ data, options }: IDataTable) => {
+import { IDataTable, showMoreBtnCb } from './dataTable';
+const dataTable: FC<IDataTable> = ({ data, options }: IDataTable) => {
     if (data) {
         if (!Array.isArray(data)) throw new Error("data needs to be an array");
-        let { fields: optFields, exclude, showMoreBtnCb } = sanitizeOptions(options);
+        let { fields: optFields, exclude, showMoreBtnCb,onScrollEndCb } = sanitizeOptions(options);
         let fields = getFields(data);
         fields = filterFields(fields, optFields, exclude);
         let rows = getRows(fields, data);
         const TABLE_OPTION = 'TABLE_OPTION'
         if (showMoreBtnCb) {
             fields.push('');
-            rows.map((row:any) => row.TABLE_OPTION = OptionButton);
+            rows.map((row: any) => row.TABLE_OPTION = OptionButton);
         }
-        const getData = (row:any, key:any, Value:any) => {
-            if (key === TABLE_OPTION) return <OptionButton onClick={(e:any) => (showMoreBtnCb as showMoreBtnCb)(e, row)} />
+        const getData = (row: any, key: any, Value: any) => {
+            if (key === TABLE_OPTION) return <OptionButton onClick={(e: any) => (showMoreBtnCb as showMoreBtnCb)(e, row)} />
             if ((typeof Value) === 'function' && React.isValidElement(<Value />)) {
                 return <Value row={row} />
             }
             return Value
         }
+        const handleOnScroll = (e: SyntheticEvent) => {
+            const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+            if (scrollHeight - scrollTop === clientHeight) {
+                if(onScrollEndCb) onScrollEndCb()
+            }
+        }
         return (
-            <div className={style.wrapper}>
+            <div className={style.wrapper} onScroll={handleOnScroll}>
                 <table className={`${style.table}`}>
                     <thead className={`${style.thead}`} >
                         <tr className={`${style.tr}`}>
