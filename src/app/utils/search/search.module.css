@@ -1,0 +1,19 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    background-color: var(--light-white);
+    border-radius: var(--space-xxs);
+}
+.input {
+  border: none;
+  border-radius: var(--space-xxs);
+  padding: var(--space-xs);
+  min-width: 250px;
+  background-color: var(--color-light-white);
+  border: none;
+  border-radius: 2px;
+  min-width: 200px;
+}
+.input:focus{
+  outline: none;
+}

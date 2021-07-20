@@ -1,0 +1,13 @@
+{
+  "name": "finix_datatable",
+  "version": "1.0.0",
+  "description": "react data table",
+  "main": "index.jsx",
+  "scripts": {},
+  "author": "anthony finix",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

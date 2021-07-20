@@ -1,4 +1,5 @@
 .wrapper{
-    padding: var(--space-md);
+    display: inline-block;
+    padding: var(--space-xxs) var(--space-sm);
     border-radius: var(--space-xxs);
 }

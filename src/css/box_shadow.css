@@ -1,21 +1,21 @@
 .shadow-xxs{
-    box-shadow: 0px 0px var(--space-xxs) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-xxs) -5px rgba(0, 0, 0, 0.400);
 }
 .shadow-xs{
-    box-shadow: 0px 0px var(--space-xs) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-xs) -5px rgba(0, 0, 0, 0.400);
 }
 .shadow-sm{
-    box-shadow: 0px 0px var(--space-sm) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-sm) -5px rgba(0, 0, 0, 0.400);
 }
 .shadow-md{
-    box-shadow: 0px 0px var(--space-md) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-md) -5px rgba(0, 0, 0, 0.400);
 }
 .shadow-lg{
-    box-shadow: 0px 0px var(--space-lg) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-lg) -5px rgba(0, 0, 0, 0.400);
 }
 .shadow-xl{
-    box-shadow: 0px 0px var(--space-xl) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-xl) -5px rgba(0, 0, 0, 0.400);
 }
 .shadow-xxl{
-    box-shadow: 0px 0px var(--space-xxl) rgba(0, 0, 0, 0.500);
+    box-shadow: 0px 0px var(--space-xxl) -5px rgba(0, 0, 0, 0.400);
 }

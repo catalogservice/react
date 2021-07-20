@@ -1,34 +1,38 @@
 import { space } from "../../../models/space.d";
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 import '../../../css/box_shadow.css';
 import style from './wrapper.module.css';
-export interface IWrapper {
+export interface IWrapper extends HTMLAttributes<HTMLDivElement> {
     elevation?: space
 }
-const Wrapper: FC<IWrapper> = (props) => {
-    let shadow = getShadow(props?.elevation);
+const Wrapper: FC<IWrapper> = ({ elevation, children, ...props }) => {
+    let shadow = getShadow(elevation);
+    let classes = props.className ? props.className : '';
+    delete props.className;
+    let styles = props.style ? { ...props.style } : {}
+    delete props.style;
     return (
-        <div className={`${style.wrapper} ${shadow}`}>
-            <h1>Wrapper</h1>
+        <div {...props} style={{...styles}} className={`${style.wrapper} ${shadow} ${classes}`}>
+            {children}
         </div>
     )
 }
 
 const getShadow = (elevation?: space): string => {
     switch (elevation) {
-        case space.xxs:
+        case "xxs":
             return `shadow-${elevation}`
-        case space.xs:
+        case "xs":
             return `shadow-${elevation}`
-        case space.sm:
+        case "sm":
             return `shadow-${elevation}`
-        case space.md:
+        case "md":
             return `shadow-${elevation}`
-        case space.lg:
+        case "lg":
             return `shadow-${elevation}`
-        case space.xl:
+        case "xl":
             return `shadow-${elevation}`
-        case space.xxl:
+        case "xxl":
             return `shadow-${elevation}`
         default:
             return `shadow-sm`

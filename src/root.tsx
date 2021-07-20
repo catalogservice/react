@@ -1,12 +1,12 @@
 import UserProvider from "./app/user/context";
 import { BrowserRouter as Router } from 'react-router-dom'
-import App from "app";
+import MainRoutes from "./route";
 function Root() {
   return (
     <>
       <Router>
         <UserProvider>
-          <App/>
+          <MainRoutes/>
         </UserProvider>
       </Router>
     </>

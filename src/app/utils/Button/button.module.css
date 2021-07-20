@@ -1,0 +1,30 @@
+.button {
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  border-radius: var(--space-xxs, 3px);
+  padding: var(--space-xs, 5px) var(--space-md, 10px);
+  margin: var(--space-xs, 5px) 0px;
+  background-color: rgb(233, 233, 233);
+  cursor: pointer;  
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: lowercase;
+  font-family: var(--primary-font);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.transparent {
+  border: none;
+  background: none;
+}
+.success {
+  border: none;
+  background-color: green;
+  color: white;
+}
+.primary{
+    background-color: var(--primary-color-dark);
+    color:var(--color-white);
+    border: none;
+    outline: none;
+}

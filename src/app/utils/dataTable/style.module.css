@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
+.wrapper{
+    height: 100% !important;
+    overflow-y: scroll;
+}
+.table{
+    width: 100%;
+    text-align: left;
+    border-spacing: 0px;
+    position: relative;
+}
+.thead{
+    width: auto;
+}

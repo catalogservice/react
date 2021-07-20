@@ -1,5 +1,5 @@
 export enum space{
-    xxs = "xxs",
+    xxs = 'xxs',
     xs = "xs",
     sm = "sm",
     md = "md",

@@ -46,3 +46,6 @@
 .heading{
     font-size: var(--space-lg,40px);
 }
+.text-center{
+    text-align: center;
+}
