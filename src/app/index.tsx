@@ -1,18 +1,20 @@
 import { FC } from "react";
 import style from './app.module.css';
-import Header from "./header";
+import MainHeader from "./header";
 import Sidebar from "./sidebar";
 import AppRoute from "./route";
-import Button from "./utils/Button";
+import MaterialProvider from "./theme/material";
 const App: FC<any> = () => {
     return (
-        <div id="app" className={style.wrapper}>
-            <Header/>
-            <div className={style.content_wrapper}>
-                <Sidebar/>
-                <AppRoute/>
+        <MaterialProvider>
+            <div id="app" className={style.wrapper}>
+                <MainHeader />
+                <div className={style.content_wrapper}>
+                    <Sidebar />
+                    <AppRoute />
+                </div>
             </div>
-        </div>
+        </MaterialProvider>
     )
 }
 

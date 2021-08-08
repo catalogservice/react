@@ -4,7 +4,6 @@ import Product from "./product";
 
 const AppRoute: FC<any> = (props) => {
     const location = useLocation();
-    console.log()
     return (
         <Switch>
             <Route path="/app/product" render={() => <Product/>} />

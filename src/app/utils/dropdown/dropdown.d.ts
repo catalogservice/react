@@ -1,7 +1,9 @@
-export interface IDropdown {
+export interface IDropdown extends any {
     el: HTMLElement | null ,
     closeDialog: function():any,
-    align?:DialogAlignment
+    align?:DialogAlignment,
+    offsetX?:number,
+    offsetY?:number,
 }
 
 export type position = {
