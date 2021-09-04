@@ -1,3 +1,3 @@
 export default {
-    api_url: process.env.REACT_APP_API_URI || 'http://localhost:8080'
+    api_url: process.env.REACT_APP_API_URI || 'http://192.168.1.3:3000'
 }

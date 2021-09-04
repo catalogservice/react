@@ -17,7 +17,7 @@ const useUser = () => {
         country: "india",
         email: "anthonyfinix@gmail.com"
     })
-    const fetchUser = () => http.get('/').then(response => console.log(response));
+    const fetchUser = () => http.get('/login').then(response => console.log(response.data));
     React.useEffect(() => {
         fetchUser()
     }, [])
