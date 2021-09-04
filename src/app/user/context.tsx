@@ -1,3 +1,4 @@
+import Loading from "app/utils/loading";
 import { createContext, FC } from "react"
 import { IUser } from "./user";
 import useUser from "./useUser";
@@ -11,7 +12,10 @@ const UserProvider: FC = (props) => {
     return (
         <>
             <UserContext.Provider value={contextData}>
-                {props.children}
+                <div style={{ height: "100vh" }}>
+                    {user ? props.children : <Loading />}
+
+                </div>
             </UserContext.Provider>
         </>
     )
