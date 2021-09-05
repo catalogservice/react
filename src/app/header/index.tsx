@@ -28,10 +28,10 @@ const MainHeader: FC<any> = (props) => {
                     </IconButton>
                     <Typography className={style.brand_name} variant="h6">Catalog</Typography>
                     <div ref={userProfileRef} className={`${style.profile_wrapper}`} onClick={handleProfileClick}>
-                        {/* <div className={`${style.profile_name_wrapper}`}>
-                    <p className={`${style.profile_first_name}`}>Anthony</p>
-                    <p  className={`${style.profile_last_name}`}>Finix</p>
-                </div> */}
+                        <div className={`${style.profile_name_wrapper}`}>
+                            <p className={`${style.profile_first_name}`}>Anthony</p>
+                            <p className={`${style.profile_last_name}`}>Finix</p>
+                        </div>
                         <Profile onClick={openUserDialog} size="sm" image={userContext?.user?.user_profile} />
                     </div>
                 </Box>

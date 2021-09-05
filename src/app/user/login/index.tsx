@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import { FC, useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Input from "app/utils/Input";
 import Button from "app/utils/Button";
 import { username, password } from "./login";
@@ -8,16 +8,24 @@ import style from './login.module.css';
 import login_primary from '../../../img/logo_primary.svg';
 import TextField from "@material-ui/core/TextField";
 import login from '../api/login';
-import { useEffect } from "react";
 import Wrapper from "app/utils/wrapper";
+import { SnackbarContext } from "util/components/errorSnackbar";
+import { UserContext } from "../context";
 
 const Login: FC<any> = () => {
+    const history = useHistory()
+    const { setError } = useContext(SnackbarContext);
+    const { user, setUser } = useContext(UserContext);
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const handleUsernameChange = (e: any) => setUsername(e.target.value)
     const handlePasswordChange = (e: any) => setPassword(e.target.value)
     const handleLoginClick = async () => {
-        login(username, password).then(response => console.log(response))
+        login(username, password).then(response => {
+            if ((typeof response.data) === 'string') return setError(response.data)
+            setUser(response.data);
+            history.push('/')
+        })
     }
     return (
         <article id="login-wrapper" className={`${style.wrapper}`}>

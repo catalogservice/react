@@ -1,20 +1,14 @@
 import Loading from "app/utils/loading";
-import { createContext, FC } from "react"
-import { IUser } from "./user";
+import { createContext, FC, useEffect } from "react"
 import useUser from "./useUser";
-export interface IUserContext {
-    user: IUser | null
-}
-export const UserContext = createContext<IUserContext | null>(null);
+export const UserContext = createContext<any | null>(null);
 const UserProvider: FC = (props) => {
-    let user = useUser();
-    const contextData: IUserContext = { user }
+    let { user, isLoading,setUser } = useUser();
     return (
         <>
-            <UserContext.Provider value={contextData}>
+            <UserContext.Provider value={{ user,setUser }}>
                 <div style={{ height: "100vh" }}>
-                    {user ? props.children : <Loading />}
-
+                    {!isLoading ? props.children : <Loading />}
                 </div>
             </UserContext.Provider>
         </>

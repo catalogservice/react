@@ -1,13 +1,16 @@
 import UserProvider from "./app/user/context";
 import { BrowserRouter as Router } from 'react-router-dom'
 import MainRoutes from "./route";
+import SnackbarProvider from "util/components/errorSnackbar";
 function Root() {
   return (
     <>
       <Router>
-        <UserProvider>
-          <MainRoutes/>
-        </UserProvider>
+        <SnackbarProvider>
+          <UserProvider>
+            <MainRoutes />
+          </UserProvider>
+        </SnackbarProvider>
       </Router>
     </>
   );
